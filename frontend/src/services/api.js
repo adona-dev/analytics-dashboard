@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-// Vite proxy routes '/api' to 'http://localhost:8000/api'
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: import.meta.env.VITE_API_URL,
 });
+
 
 // Intercept requests to inject bearer tokens
 api.interceptors.request.use(
