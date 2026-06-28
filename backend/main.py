@@ -44,7 +44,10 @@ app = FastAPI(
 # Enable CORS (Cross-Origin Resource Sharing)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # For production, restrict to specific domains
+    allow_origins=[
+        "http://localhost:5173",
+        "https://analytics-dashboard-lime-pi.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
